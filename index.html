@@ -15,16 +15,16 @@
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -42,7 +42,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+      <a href="index.html">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h3>Picasso's Beauty Salon</h3>
@@ -51,7 +51,6 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>   
           <li><a href="#gallery">Gallery</a></li>
@@ -65,39 +64,21 @@
 
     </div>
   </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="mainDisplay" style="width:100%" >
-    <div class="container-fluid">
-      <div class="row text-center">
-        <h1>Come Get Glammed</h1>
-        <div class="col-12">
-          <img src="assets/img/hair-bg.png" class="img-fluid img-responsive" alt="" data-aos="zoom-out" data-aos-delay="300"
-            style="width:100%">
-    
-        </div>
-      </div>
-      <!--<img src="assets/img/a-liz-banner1.png" class="img-fluid img-responsive"  alt="" data-aos="zoom-out" data-aos-delay="300" style="height:100%">
-        </div>-->
-    <!--</div>-->
-  </section><!-- End Hero Section -->
-
   <main id="main">
-
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
         <div class="row gy-4">
-          <img src="assets/img/a-salon3.jpeg" alt="" class="img-fluid smokey">
-          <!-- <div class="col-lg-7 position-relative about-img" style="background-image: url(assets/img/a-salon3.jpeg) ;" data-aos="fade-up" data-aos-delay="150">
-            <div class="call-us position-absolute">
+          <figure class="txtover"><img src="assets/img/a-salon3.jpeg" alt="" class="img-fluid smokey">
+            <figcaption class="call-us">
               <h4>Book an Appointment</h4>
-              <p>(702)831-8271</p>
-            </div>
-          </div> -->
-          <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
-            <div class="content ps-0 ps-lg-5">
-              <h4 class="text-nowrap"> <!--class="fst-italic"-->
+              <a href="tel:+17028318271">702 831-8271</a>
+            </figcaption>
+          </figure >
+
+          <div class="d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="content ps-0 ps-lg-5 location-paragraph">
+              <h4 class="text-nowrap text-center"> <!--class="fst-italic"-->
                 My shop is located in North Las Vegas.
               </h4>
               <p>
@@ -108,80 +89,55 @@
             </div>
           </div>
         </div>
-
       </div>
     </section><!-- End About Section -->
 
     <!-- ======= Why Us Section ======= -->
-    <section id="services" class="why-us section-bg"> 
-      <div class="container" data-aos="fade-up">
-
+    <section id="services" class="section-bg container"> 
         <div class="row gy-4">
-
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100"> 
             <img src="assets/img/service.png" class="service-banner" />
             <img src="assets/img/m-service.png" class="m-service-banner" />
           </div>
         </div><!-- End Why Box -->
-
-
-        </div>
-
-     
+  
     </section><!-- End Why Us Section -->
- <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>gallery</h2>
-          <p>Check <span>Our Gallery</span></p>
-        </div>
-
-        <div class="gallery-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair1-copy.png"><img src="assets/img/gallery/hair1-copy.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair2-copy.png"><img src="assets/img/gallery/hair2-copy.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair3-copy.png"><img src="assets/img/gallery/hair3-copy.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair4.png"><img src="assets/img/gallery/hair4.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair5.png"><img src="assets/img/gallery/hair5.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair7.png"><img src="assets/img/gallery/hair7.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair8.png"><img src="assets/img/gallery/hair8.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair9.png"><img src="assets/img/gallery/hair9.png" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair10.png"><img src="assets/img/gallery/hair10.png" class="img-fluid" alt=""></a></div>
-            <!--<div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-1.jpg"><img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-2.jpg"><img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-3.jpg"><img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-4.jpg"><img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-5.jpg"><img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-6.jpg"><img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-7.jpg"><img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/gallery-8.jpg"><img src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt=""></a></div>
-          </div>-->
-          <div class="swiper-pagination"></div>
-        </div>
-
+ 
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery">
+      <div class="section-header">
+        <h2>Check Our Gallery</h2>
       </div>
-    </section><!-- End Gallery Section -->
+      <div class="row">
+      <div class="col-1 swiper-button-prev gallery-btn"></div>
+      <div class="gallery-slider swiper swiper-container col-10"" data-aos="fade-up">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair1-copy.png"><img src="assets/img/gallery/hair1-copy.png" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair2-copy.png"><img src="assets/img/gallery/hair2-copy.png" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair3-copy.png"><img src="assets/img/gallery/hair3-copy.png" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair4.png"><img src="assets/img/gallery/hair4.png" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair5.png"><img src="assets/img/gallery/hair5.png" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair7.png"><img src="assets/img/gallery/hair7.png" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair8.png"><img src="assets/img/gallery/hair8.png" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair9.png"><img src="assets/img/gallery/hair9.png" class="img-fluid" alt=""></a></div>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair10.png"><img src="assets/img/gallery/hair10.png" class="img-fluid" alt=""></a></div>
+        </div>
+      </div>
+      <div class="col-1 swiper-button-next gallery-btn"><i class="bi bi-arrow-right-circle-fill"></i></div>
+    </div>         
+  </section><!-- End Gallery Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Contact</h2>
-          <p>Need Help? <span>Contact Us</span></p>
+          <h2>Need Help? Contact Us</h2>
         </div>
 
         <div class="mb-3">
-          <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+          <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3219.622129124637!2d-115.20874908437818!3d36.200070708948736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c112c42818a7%3A0x764e2d3f9d559de7!2sPicasso&#39;s%20Beauty%20Salon!5e0!3m2!1sen!2sus!4v1670092821977!5m2!1sen!2sus" frameborder="0" allowfullscreen></iframe>
         </div><!-- End Google Maps -->
 
         <div class="row gy-4">
@@ -191,7 +147,7 @@
               <i class="icon bi bi-map flex-shrink-0"></i>
               <div>
                 <h3>Our Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>2245 N Decatur Blvd, Las Vegas, NV 89108</p>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -211,7 +167,7 @@
               <i class="icon bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
+                <p>702 831 8271</p>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -229,34 +185,6 @@
           </div><!-- End Info Item -->
 
         </div>
-
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
-          <div class="row">
-            <div class="col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-            </div>
-            <div class="col-xl-6 form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-          </div>
-          <div class="my-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
-          </div>
-          <div class="text-center"><button type="submit">Send Message</button></div>
-        </form>
-        <!--End Contact Form -->
-
-      </div>
-    </section><!-- End Contact Section -->
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -269,8 +197,8 @@
           <div>
             <h4>Address</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022 - US<br>
+              2245 N Decatur Blvd, <br/>
+              Las Vegas, NV 89108
             </p>
           </div>
 
@@ -279,9 +207,9 @@
         <div class="col-lg-3 col-md-6 footer-links d-flex">
           <i class="bi bi-telephone icon"></i>
           <div>
-            <h4>Reservations</h4>
+            <h4>Book an appointment</h4>
             <p>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Phone:</strong>702 831 8271<br>
               <strong>Email:</strong> info@example.com<br>
             </p>
           </div>
@@ -290,9 +218,9 @@
         <div class="col-lg-3 col-md-6 footer-links d-flex">
           <i class="bi bi-clock icon"></i>
           <div>
-            <h4>Opening Hours</h4>
+            <h4>Hours</h4>
             <p>
-              <strong>Mon-Sat: 11AM</strong> - 23PM<br>
+              <strong>Mon-Sat: 10AM</strong> - 6PM<br>
               Sunday: Closed
             </p>
           </div>
@@ -329,7 +257,7 @@
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <div id="preloader"></div>
+
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
