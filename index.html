@@ -105,7 +105,7 @@
  
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="container">
-      <div id="carouselMultiItemExample" class="carousel carousel-dark" data-bs-ride="carousel">
+      <div id="carouselMultiItemExample" class="carousel" data-bs-ride="carousel">
         <div class="section-header">
           <h2>Check Our Gallery</h2>
         </div>
@@ -121,15 +121,11 @@
         </ol>
         
       <!-- Inner -->
+
       <div class="carousel-inner py-4">
         <div class="carousel-item active">
           <div class="card">
-            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="d-block w-100" alt="" /></a></div>
-          </div>
-        </div>
-        <div class="carousel-item active">
-          <div class="card">
-            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="d-block w-100" alt="" /></a></div>
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair1-copy.png"><img src="assets/img/gallery/hair1-copy.png" class="d-block w-100" alt="" /></a></div>
           </div>
         </div>
         <div class="carousel-item">
@@ -139,7 +135,27 @@
         </div>
         <div class="carousel-item">
           <div class="card">
-            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="d-block w-100" alt="" /></a></div>
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair2-copy.png"><img src="assets/img/gallery/hair2-copy.png" class="d-block w-100" alt="" /></a></div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card">
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair3-copy.png"><img src="assets/img/gallery/hair3-copy.png" class="d-block w-100" alt="" /></a></div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card">
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair4.png"><img src="assets/img/gallery/hair4.png" class="d-block w-100" alt="" /></a></div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card">
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair10.png"><img src="assets/img/gallery/hair10.png" class="d-block w-100" alt="" /></a></div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card">
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair5.png"><img src="assets/img/gallery/hair5.png" class="d-block w-100" alt="" /></a></div>
           </div>
         </div>
         <div class="carousel-item">
@@ -149,16 +165,26 @@
         </div>
         <div class="carousel-item">
           <div class="card">
-            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="d-block w-100" alt="" /></a></div>
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair9.png"><img src="assets/img/gallery/hair9.png" class="d-block w-100" alt="" /></a></div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card">
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair8.png"><img src="assets/img/gallery/hair8.png" class="d-block w-100" alt="" /></a></div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card">
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair7.png"><img src="assets/img/gallery/hair7.png" class="d-block w-100" alt="" /></a></div>
           </div>
         </div>
       </div>
-     
-      </div>
-    </section>
-
-    <!-- End Gallery Section -->
-
+      
+    </div>
+  </section>
+  
+  <!-- End Gallery Section -->
+  
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
@@ -304,33 +330,58 @@
     var multipleCardCarousel = document.querySelector(
       "#carouselMultiItemExample"
     );
-
-    var carouselWidth = $(".carousel-inner")[0].scrollWidth;
-    var cardWidth = $(".carousel-item").width();
-    var scrollPosition = 0;
-    $("#carouselMultiItemExample .carousel-control-next").on("click", function () {
-      if (scrollPosition < carouselWidth - cardWidth * 4) {
-        scrollPosition += cardWidth;
-        console.log(scrollPosition)
-        $("#carouselMultiItemExample .carousel-inner").animate(
-          { scrollLeft: scrollPosition },
-          600
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+        interval: false,
+      });
+      var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+      var cardWidth = $(".carousel-item").width();
+      var scrollPosition = 0;
+      $("#carouselExampleControls .carousel-control-next").on("click", function () {
+        console.log((scrollPosition < carouselWidth - cardWidth * 4))
+        if (scrollPosition < carouselWidth - cardWidth * 4) {
+          scrollPosition += cardWidth;
+          $("#carouselMultiItemExample .carousel-inner").animate(
+            { scrollLeft: scrollPosition },
+            600
+            );
+          }
+        });
+        $("#carouselExampleControls .carousel-control-prev").on("click", function () {
+          console.log((scrollPosition > 0))
+          if (scrollPosition > 0) {
+          scrollPosition -= cardWidth;
+          $("#carouselMultiItemExample .carousel-inner").animate(
+            { scrollLeft: scrollPosition },
+            600
           );
         }
       });
-      $("#carouselMultiItemExample .carousel-control-prev").on("click", function () {
-        if (scrollPosition > 0) {
-        console.log('prev')
-        scrollPosition -= cardWidth;
+    } else {
+      $(multipleCardCarousel).addClass("slide");
+      var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+      var cardWidth = $(".carousel-item").width();
+      var scrollPosition = 0;
+      $("#carouselExampleControls .carousel-control-next").on("click", function () {
+        console.log((scrollPosition < carouselWidth - cardWidth * 4))
+        scrollPosition += cardWidth;
         $("#carouselMultiItemExample .carousel-inner").animate(
           { scrollLeft: scrollPosition },
           600
-        );
-      }
-    });
-    
+          );          
+        });
+        $("#carouselExampleControls .carousel-control-prev").on("click", function () {
+          console.log((scrollPosition > 0))
+          if (scrollPosition > 0) {
+          scrollPosition -= cardWidth;
+          $("#carouselMultiItemExample .carousel-inner").animate(
+            { scrollLeft: scrollPosition },
+            600
+          );
+        }
+      });
+
+    }   
   </script>
-
 </body>
-
 </html>
