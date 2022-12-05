@@ -15,14 +15,14 @@
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Galindo&family=Roboto&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <!-- Template Main CSS File -->
@@ -44,8 +44,8 @@
 
       <a href="index.html">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h3>Picasso's Beauty Salon</h3>
+        <!-- <img src="assets/img/logo.png" alt="" /> -->
+        <h3 class="header-text">Picasso's Beauty Salon</h3>
         
       </a>
 
@@ -66,9 +66,9 @@
   </header><!-- End Header -->
   <main id="main">
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="about text-center">
       <div class="container" data-aos="fade-up">
-        <div class="row gy-4">
+        <div class="row">
           <figure class="txtover"><img src="assets/img/a-salon3.jpeg" alt="" class="img-fluid smokey">
             <figcaption class="call-us">
               <h4>Book an Appointment</h4>
@@ -77,11 +77,11 @@
           </figure >
 
           <div class="d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="content ps-0 ps-lg-5 location-paragraph">
+            <div class="content ps-0 ps-lg-5">
               <h4 class="text-nowrap text-center"> <!--class="fst-italic"-->
                 My shop is located in North Las Vegas.
               </h4>
-              <p>
+              <p class="about-text text-wrap">
                 The salon is a space where everyone feels comfortable and welcome. My goal is that every client receives an outstanding
                 service from the time they walk in, to the time they walk out. I pride myself on my good listening ability to interpret
                 my clients requests. I am dedicated to creating a good experience.
@@ -104,29 +104,60 @@
     </section><!-- End Why Us Section -->
  
     <!-- ======= Gallery Section ======= -->
-    <section id="gallery">
-      <div class="section-header">
-        <h2>Check Our Gallery</h2>
-      </div>
-      <div class="row">
-      <div class="col-1 swiper-button-prev gallery-btn"></div>
-      <div class="gallery-slider swiper swiper-container col-10"" data-aos="fade-up">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair1-copy.png"><img src="assets/img/gallery/hair1-copy.png" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair2-copy.png"><img src="assets/img/gallery/hair2-copy.png" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair3-copy.png"><img src="assets/img/gallery/hair3-copy.png" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair4.png"><img src="assets/img/gallery/hair4.png" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair5.png"><img src="assets/img/gallery/hair5.png" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair7.png"><img src="assets/img/gallery/hair7.png" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair8.png"><img src="assets/img/gallery/hair8.png" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair9.png"><img src="assets/img/gallery/hair9.png" class="img-fluid" alt=""></a></div>
-          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair10.png"><img src="assets/img/gallery/hair10.png" class="img-fluid" alt=""></a></div>
+    <section id="gallery" class="container">
+      <div id="carouselMultiItemExample" class="carousel carousel-dark" data-bs-ride="carousel">
+        <div class="section-header">
+          <h2>Check Our Gallery</h2>
+        </div>
+        <ol id="carouselExampleControls" class="carousel-indicators">
+          <li class="carousel-control-prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </li>
+          <li class="carousel-control-next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </li>
+        </ol>
+        
+      <!-- Inner -->
+      <div class="carousel-inner py-4">
+        <div class="carousel-item active">
+          <div class="card">
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="d-block w-100" alt="" /></a></div>
+          </div>
+        </div>
+        <div class="carousel-item active">
+          <div class="card">
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="d-block w-100" alt="" /></a></div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card">
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="d-block w-100" alt="" /></a></div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card">
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="d-block w-100" alt="" /></a></div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card">
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="d-block w-100" alt="" /></a></div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card">
+            <div class="img-wrapper"><a class="glightbox" data-gallery="images-gallery" href="assets/img/gallery/hair6.png"><img src="assets/img/gallery/hair6.png" class="d-block w-100" alt="" /></a></div>
+          </div>
         </div>
       </div>
-      <div class="col-1 swiper-button-next gallery-btn"><i class="bi bi-arrow-right-circle-fill"></i></div>
-    </div>         
-  </section><!-- End Gallery Section -->
+     
+      </div>
+    </section>
+
+    <!-- End Gallery Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -260,15 +291,45 @@
 
 
   <!-- Vendor JS Files -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    var multipleCardCarousel = document.querySelector(
+      "#carouselMultiItemExample"
+    );
+
+    var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+    var cardWidth = $(".carousel-item").width();
+    var scrollPosition = 0;
+    $("#carouselMultiItemExample .carousel-control-next").on("click", function () {
+      if (scrollPosition < carouselWidth - cardWidth * 4) {
+        scrollPosition += cardWidth;
+        console.log(scrollPosition)
+        $("#carouselMultiItemExample .carousel-inner").animate(
+          { scrollLeft: scrollPosition },
+          600
+          );
+        }
+      });
+      $("#carouselMultiItemExample .carousel-control-prev").on("click", function () {
+        if (scrollPosition > 0) {
+        console.log('prev')
+        scrollPosition -= cardWidth;
+        $("#carouselMultiItemExample .carousel-inner").animate(
+          { scrollLeft: scrollPosition },
+          600
+        );
+      }
+    });
+    
+  </script>
 
 </body>
 

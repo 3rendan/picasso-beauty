@@ -11,9 +11,9 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --font-default: 'Lato', sans-serif;
-  --font-primary: "Amatic SC", sans-serif;
-  --font-secondary: 'Raleway', sans-serif;
+  --font-default: 'Roboto', sans-serif;
+  --font-primary: 'Comfortaa', cursive;
+  --font-secondary: 'Galindo', cursive;
 }
 
 /* Colors */
@@ -37,9 +37,7 @@ body {
   color: var(--color-default);
   background-color: var(--color-background);
 }
-.location-paragraph {
-  padding: .5rem;
-}
+
 a {
   color: var(--color-primary);
   text-decoration: none;
@@ -148,7 +146,10 @@ section {
 # Header
 --------------------------------------------------------------*/
 .header {
-  background-image: url('../img/hair-bg.png');
+  background-image: url('../img/header-bar.png');
+  background-repeat: no-repeat;
+  background-color: #FFC6D1;
+  background-position: center;
   transition: all 0.5s;
   z-index: 997;
   height: 90px;
@@ -159,6 +160,9 @@ section {
   .header {
     height: 70px;
   }
+}
+.header-text {
+  text-shadow: 1px 1px var(--color-background);
 }
 
 .header.sticked {
@@ -221,11 +225,13 @@ section {
     font-family: var(--font-secondary);
     font-size: 16px;
     font-weight: 600;
-    color: #7f7f90;
+    color: var(--color-background);
+    text-shadow: 1px 1px var(--color-primary);
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
   }
+
 
   .navbar a i,
   .navbar a:focus i {
@@ -258,7 +264,7 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: #000;
+    color: var(--color-background);
   }
 
   .navbar .dropdown ul {
@@ -1501,4 +1507,51 @@ section {
 
 .footer .credits a {
   color: #fff;
+}
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .text-nowrap {
+    font-size: 1rem;
+  }
+  .about-text {
+    font-size: .75rem;
+  }
+}
+.carousel-inner{
+  padding: 1em;
+}
+.card{
+  margin: 0 .5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+}
+.carousel-control-prev, .carousel-control-next{
+  background-color: var(--color-primary);
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.carousel-indicators {
+  position: relative;
+}
+.card .img-wrapper {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card img {
+  max-height: 100%;
+}
+@media screen and (min-width:576px) {
+  .carousel-inner {
+    display: flex;
+  }
+  .carousel-item {
+    display: block;
+    margin-right: 0;
+    flex: 0 0 calc(100%/3);
+  }  
 }
