@@ -61,18 +61,13 @@ h6 {
 /*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
-
-
 section {
   overflow: hidden;
   padding: 20px 0;
 }
 
-
-
 .section-header {
   text-align: center;
-  padding-bottom: 30px;
 }
 
 .section-header h2 {
@@ -97,7 +92,6 @@ section {
   color: var(--color-primary);
 }
 
-
 /*--------------------------------------------------------------
 # Scroll top button
 --------------------------------------------------------------*/
@@ -114,7 +108,6 @@ section {
   border-radius: 50px;
   transition: all 0.4s;
 }
-
 
 .scroll-top i {
   font-size: 24px;
@@ -183,6 +176,15 @@ section {
 
 .header .logo h1 span {
   color: var(--color-primary);
+}
+/* Fixes fixed header overflow when clicking on links */
+section::before { 
+  display: block; 
+  content: " "; 
+  margin-top: -285px; 
+  height: 400px; 
+  visibility: hidden; 
+  pointer-events: none;
 }
 
 
@@ -476,14 +478,20 @@ section {
   text-align: center;
   border-radius: .5rem;
 }
-
+/* Text over the hero image with the phone number box */
 .txtover { 
   position:relative 
 } 
+
 .txtover figcaption { 
   position:absolute; 
   bottom:20%; 
   left:20%; 
+}
+
+.smokey { /* hero image */
+  opacity: 0.5;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 }
 
 .about .call-us h4 {
@@ -521,79 +529,6 @@ section {
   margin-bottom: 0;
 }
 
-.about .play-btn {
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(var(--color-primary) 50%, rgba(206, 18, 18, 0.4) 52%);
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-  left: calc(50% - 47px);
-  top: calc(50% - 47px);
-  overflow: hidden;
-}
-
-.about .play-btn:before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation: pulsate-btn 2s;
-  animation: pulsate-btn 2s;
-  -webkit-animation-direction: forwards;
-  animation-direction: forwards;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: steps;
-  animation-timing-function: steps;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid rgba(206, 18, 18, 0.7);
-  top: -15%;
-  left: -15%;
-  background: rgba(198, 16, 0, 0);
-}
-
-.about .play-btn:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid var(--color-background);
-  z-index: 100;
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-.about .play-btn:hover:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border: none;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid var(--color-background);
-  z-index: 200;
-  -webkit-animation: none;
-  animation: none;
-  border-radius: 0;
-}
-
-.about .play-btn:hover:after {
-  border-left: 15px solid var(--color-primary);
-  transform: scale(20);
-}
-
 @-webkit-keyframes pulsate-btn {
   0% {
     transform: scale(0.6, 0.6);
@@ -619,7 +554,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Why Us Section
+# Service Banner Section
 --------------------------------------------------------------*/
 .service-banner{
   max-width: 100%;
@@ -629,10 +564,7 @@ section {
 .m-service-banner {
   display: none;
 }
-.smokey {
-  opacity: 0.5;
-  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-}
+
 @media (max-width: 820px) {
   .service-banner{
     display: none;
@@ -642,11 +574,9 @@ section {
     margin: auto;
   }
 }
-.swiper-button-next::after, .swiper-button-prev::after {
-  content: "";
-}
+
 /*--------------------------------------------------------------
-# Gallery Section
+# Gallery/ Carousel Section
 --------------------------------------------------------------*/
 .gallery {
   overflow: hidden;
@@ -684,6 +614,56 @@ section {
     z-index: 1;
     transform: scale(1.2);
   }
+}
+/* Carousel styles */
+.carousel-inner{
+  padding: 1em;
+  display: flex;
+}
+
+.card{
+  margin: 0 .5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+}
+
+.carousel-control-prev, .carousel-control-next{
+  background-color: var(--color-primary);
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: .5;
+}
+
+.carousel-indicators {
+  position: relative;
+}
+
+.card .img-wrapper {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img {
+  max-height: 100%;
+}
+
+.carousel-item {
+  margin-right: 0;
+  flex: 0 100%;
+  transition(.4s ease-in-out left);
+}
+
+@media screen and (min-width:768px) {
+  .carousel-item {
+    display: block;
+    margin-right: 0;
+    flex: 0 0 calc(100%/3);
+  }  
 }
 
 /*--------------------------------------------------------------
@@ -734,92 +714,6 @@ section {
 
 .contact .info-item .social-links a:hover {
   color: var(--color-primary);
-}
-
-.contact .php-email-form {
-  width: 100%;
-  margin-top: 30px;
-  background: var(--color-background);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
-}
-
-.contact .php-email-form .form-group {
-  padding-bottom: 20px;
-}
-
-.contact .php-email-form .error-message {
-  display: none;
-  color: var(--color-background);
-  background: #df1529;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .error-message br+br {
-  margin-top: 25px;
-}
-
-.contact .php-email-form .sent-message {
-  display: none;
-  color: var(--color-background);
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .loading {
-  display: none;
-  background: var(--color-background);
-  text-align: center;
-  padding: 15px;
-}
-
-.contact .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #059652;
-  border-top-color: var(--color-background);
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
-}
-
-.contact .php-email-form input,
-.contact .php-email-form textarea {
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-}
-
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--color-primary);
-}
-
-.contact .php-email-form input {
-  height: 48px;
-}
-
-.contact .php-email-form textarea {
-  padding: 10px 12px;
-}
-
-.contact .php-email-form button[type=submit] {
-  background: var(--color-primary);
-  border: 0;
-  padding: 12px 40px;
-  color: var(--color-background);
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: #ec2727;
 }
 
 @keyframes animate-loading {
@@ -937,52 +831,4 @@ section {
     visibility: hidden; 
     pointer-events: none;
   }
-}
-/* Carousel styles */
-.carousel-inner{
-  padding: 1em;
-}
-.card{
-  margin: 0 .5em;
-  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-  border: none;
-}
-.carousel-control-prev, .carousel-control-next{
-  background-color: var(--color-primary);
-  width: 6vh;
-  height: 6vh;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.carousel-indicators {
-  position: relative;
-}
-.card .img-wrapper {
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.card img {
-  max-height: 100%;
-}
-@media screen and (min-width:576px) {
-  .carousel-inner {
-    display: flex;
-  }
-  .carousel-item {
-    display: block;
-    margin-right: 0;
-    flex: 0 0 calc(100%/3);
-  }  
-}
-/* Fixes fixed header overflow when clicking on links */
-section::before { 
-  display: block; 
-  content: " "; 
-  margin-top: -285px; 
-  height: 400px; 
-  visibility: hidden; 
-  pointer-events: none;
 }
